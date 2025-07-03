@@ -12,10 +12,13 @@ const MusicManager = () => {
   useEffect(() => {
     // Initialize the sound with a working audio source
     const howl = new Howl({
-      src: ['https://www.soundjay.com/misc/sounds/magic-chime-02.mp3'],
+      src: 'C:/Users/titik/OneDrive/Desktop/new/galaxy-love-stories-unfold/song.mp3',
       loop: true,
       volume: 0.3,
       html5: true,
+/*************  ✨ Windsurf Command ⭐  *************/
+      // Callback when the sound has loaded successfully
+/*******  ac6955c2-9797-4a6d-9bed-aad5436f86d4  *******/
       onload: () => {
         console.log('Music loaded successfully');
       },
