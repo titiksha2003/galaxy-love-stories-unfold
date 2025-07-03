@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@400;600;700&family=Lora:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Dancing+Script:wght@400;600;700&family=Lora:wght@400;500;600&family=Fredoka:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -116,6 +115,10 @@ All colors MUST be HSL.
 
   .font-lora {
     font-family: 'Lora', serif;
+  }
+
+  .font-fredoka {
+    font-family: 'Fredoka', sans-serif;
   }
 }
 
@@ -371,6 +374,35 @@ All colors MUST be HSL.
   transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* Music toggle button */
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(200, 184, 244, 0.2);
+  border: 2px solid rgba(249, 197, 209, 0.5);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.music-toggle:hover {
+  background: rgba(200, 184, 244, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(249, 197, 209, 0.4);
+}
+
+.music-toggle.muted {
+  opacity: 0.6;
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
   .modal-content {
@@ -381,5 +413,12 @@ All colors MUST be HSL.
   
   .planet {
     margin: 1rem;
+  }
+
+  .music-toggle {
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
   }
 }

@@ -145,19 +145,19 @@ const Game = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-4">
         <button
           onClick={() => navigate('/')}
-          className="absolute top-4 left-4 px-4 py-2 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white rounded-full font-orbitron hover:scale-105 transition-transform"
+          className="absolute top-4 left-4 px-4 py-2 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white rounded-full font-fredoka hover:scale-105 transition-transform"
         >
           ← Back to Galaxy
         </button>
 
         <div className="text-center mb-8">
-          <h1 className="font-dancing text-4xl md:text-6xl text-white mb-4 animate-shimmer">
+          <h1 className="font-orbitron text-4xl md:text-6xl text-white mb-4 animate-shimmer">
             🌠 Catch Stars for Love 🌠
           </h1>
-          <p className="font-orbitron text-lg text-[hsl(var(--soft-gold))] mb-4">
+          <p className="font-fredoka text-lg text-[hsl(var(--soft-gold))] mb-4">
             Move with arrow keys • Catch ✨ love stars • Avoid ⭐ dull stars
           </p>
-          <div className="font-orbitron text-2xl text-[hsl(var(--blush-pink))]">
+          <div className="font-fredoka text-2xl text-[hsl(var(--blush-pink))] font-bold">
             Score: {score}
           </div>
         </div>
@@ -180,7 +180,7 @@ const Game = () => {
             <div className="absolute inset-0 flex items-center justify-center bg-black/50 rounded-lg">
               <button
                 onClick={startGame}
-                className="px-8 py-4 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white font-orbitron text-xl rounded-full hover:scale-105 transition-transform animate-pulse-glow"
+                className="px-8 py-4 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white font-fredoka text-xl rounded-full hover:scale-105 transition-transform animate-pulse-glow"
               >
                 Start Game
               </button>
@@ -189,18 +189,18 @@ const Game = () => {
           
           {gameOver && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/70 rounded-lg">
-              <h2 className="font-dancing text-3xl text-white mb-4">Game Over!</h2>
-              <p className="font-orbitron text-xl text-[hsl(var(--soft-gold))] mb-6">Final Score: {score}</p>
+              <h2 className="font-orbitron text-3xl text-white mb-4">Game Over!</h2>
+              <p className="font-fredoka text-xl text-[hsl(var(--soft-gold))] mb-6 font-bold">Final Score: {score}</p>
               <div className="space-x-4">
                 <button
                   onClick={startGame}
-                  className="px-6 py-3 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white font-orbitron rounded-full hover:scale-105 transition-transform"
+                  className="px-6 py-3 bg-gradient-to-r from-[hsl(var(--lavender))] to-[hsl(var(--blush-pink))] text-white font-fredoka rounded-full hover:scale-105 transition-transform"
                 >
                   Play Again
                 </button>
                 <button
                   onClick={() => navigate('/')}
-                  className="px-6 py-3 bg-gradient-to-r from-[hsl(var(--soft-gold))] to-[hsl(var(--starlight-white))] text-[hsl(var(--galaxy-navy))] font-orbitron rounded-full hover:scale-105 transition-transform"
+                  className="px-6 py-3 bg-gradient-to-r from-[hsl(var(--soft-gold))] to-[hsl(var(--starlight-white))] text-[hsl(var(--galaxy-navy))] font-fredoka rounded-full hover:scale-105 transition-transform"
                 >
                   Back to Galaxy
                 </button>
