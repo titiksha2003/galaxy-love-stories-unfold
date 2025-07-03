@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface InfiniteLoveModalProps {
   isOpen: boolean;
@@ -7,7 +8,14 @@ interface InfiniteLoveModalProps {
 }
 
 const InfiniteLoveModal: React.FC<InfiniteLoveModalProps> = ({ isOpen, onClose }) => {
+  const navigate = useNavigate();
+
   if (!isOpen) return null;
+
+  const handlePlayGame = () => {
+    navigate('/game');
+    onClose();
+  };
 
   return (
     <div className="modal-overlay animate-fade-in" onClick={onClose}>
@@ -40,6 +48,13 @@ const InfiniteLoveModal: React.FC<InfiniteLoveModalProps> = ({ isOpen, onClose }
               I will love you… infinitely.
             </p>
           </div>
+          
+          <button
+            onClick={handlePlayGame}
+            className="mt-8 px-8 py-3 bg-gradient-to-r from-[hsl(var(--blush-pink))] to-[hsl(var(--soft-gold))] text-white font-orbitron font-bold rounded-full hover:scale-105 transition-transform animate-pulse-glow"
+          >
+            🌠 Catch Stars for Love 🌠
+          </button>
           
           <div className="absolute inset-0 pointer-events-none">
             {[...Array(20)].map((_, i) => (
