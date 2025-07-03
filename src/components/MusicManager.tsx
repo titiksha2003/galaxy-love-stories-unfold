@@ -27,7 +27,6 @@ const MusicManager = () => {
         // Try alternative source
         const fallbackHowl = new Howl({
           src: ['https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'],
-          loop: true,
           volume: 0.3,
           html5: true,
           onload: () => {
