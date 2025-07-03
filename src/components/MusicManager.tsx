@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Howl } from 'howler';
-import { Music, MusicOff } from 'lucide-react';
+import { Music, VolumeOff } from 'lucide-react';
 
 const MusicManager = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -87,7 +86,7 @@ const MusicManager = () => {
       title={isMuted ? 'Unmute Music' : isPlaying ? 'Pause Music' : 'Play Music'}
     >
       {isMuted ? (
-        <MusicOff className="w-6 h-6 text-white animate-pulse-glow" />
+        <VolumeOff className="w-6 h-6 text-white animate-pulse-glow" />
       ) : (
         <Music className="w-6 h-6 text-white animate-pulse-glow" />
       )}
