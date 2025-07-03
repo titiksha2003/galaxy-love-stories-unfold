@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Howl } from 'howler';
 import { Music, VolumeOff } from 'lucide-react';
@@ -9,9 +10,9 @@ const MusicManager = () => {
   const [hasInteracted, setHasInteracted] = useState(false);
 
   useEffect(() => {
-    // Initialize the sound
+    // Initialize the sound with a working audio source
     const howl = new Howl({
-      src: ['https://www.youtube.com/watch?v=OJixIQFF-wA&list=RDOJixIQFF-wA&start_radio=1'],
+      src: ['https://www.soundjay.com/misc/sounds/magic-chime-02.mp3'],
       loop: true,
       volume: 0.3,
       html5: true,
@@ -20,7 +21,20 @@ const MusicManager = () => {
       },
       onloaderror: (id, error) => {
         console.error('Error loading music:', error);
-        // Fallback to a placeholder audio or handle gracefully
+        // Try alternative source
+        const fallbackHowl = new Howl({
+          src: ['https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'],
+          loop: true,
+          volume: 0.3,
+          html5: true,
+          onload: () => {
+            console.log('Fallback music loaded successfully');
+          },
+          onloaderror: () => {
+            console.log('Could not load background music - using silent mode');
+          }
+        });
+        setSound(fallbackHowl);
       }
     });
 
@@ -28,10 +42,11 @@ const MusicManager = () => {
 
     // Add event listener for first user interaction
     const handleFirstInteraction = () => {
-      if (!hasInteracted) {
+      if (!hasInteracted && howl) {
         setHasInteracted(true);
         howl.play();
         setIsPlaying(true);
+        console.log('Music started playing after user interaction');
       }
     };
 
@@ -53,9 +68,11 @@ const MusicManager = () => {
     if (isPlaying) {
       sound.pause();
       setIsPlaying(false);
+      console.log('Music paused');
     } else {
       sound.play();
       setIsPlaying(true);
+      console.log('Music resumed');
     }
   };
 
@@ -65,9 +82,11 @@ const MusicManager = () => {
     if (isMuted) {
       sound.volume(0.3);
       setIsMuted(false);
+      console.log('Music unmuted');
     } else {
       sound.volume(0);
       setIsMuted(true);
+      console.log('Music muted');
     }
   };
 
