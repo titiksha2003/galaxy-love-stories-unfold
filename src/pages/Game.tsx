@@ -154,9 +154,18 @@ const Game = () => {
           <h1 className="font-orbitron text-4xl md:text-6xl text-white mb-4 animate-shimmer">
             🌠 Catch Stars for Love 🌠
           </h1>
-          <p className="font-fredoka text-lg text-[hsl(var(--soft-gold))] mb-4">
-            Move with arrow keys • Catch ✨ love stars • Avoid ⭐ dull stars
+          <p className="font-fredoka text-lg text-[hsl(var(--soft-gold))] mb-4 text-center max-w-xl mx-auto leading-relaxed">
+              In this universe where distance keeps us apart,<br />
+              her words travel through stars — waiting to be caught.<br />
+              <br />
+              The glowing ones hold love.<br />
+              The others… hold silence and danger.<br />
+              <br />
+              Move gently.<br />
+              Catch her heart.<br />
+              Avoid the void.
           </p>
+
           <div className="font-fredoka text-2xl text-[hsl(var(--blush-pink))] font-bold">
             Score: {score}
           </div>
@@ -211,7 +220,7 @@ const Game = () => {
 
         <div className="mt-8 text-center">
           <p className="font-dancing text-lg text-white">
-            "Every star I catch is a reminder of how much I love you! 💫"
+            "Every star you catch with message is a reminder of how much I love you! 💫"
           </p>
         </div>
       </div>
