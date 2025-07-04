@@ -5,16 +5,19 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/galaxy-love-stories-unfold/',
- // <-- ADD THIS LINE
+  // ✅ Use dynamic base: '/' for dev, GitHub Pages path for prod
+  base: mode === "development" ? "/" : "/galaxy-love-stories-unfold/",
+
   server: {
-    host: "::",
+    host: "localhost",
     port: 8080,
   },
+
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    mode === "development" && componentTagger(),
   ].filter(Boolean),
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
